@@ -754,7 +754,7 @@
                             <li><a href="staff.html"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
                             <li><router-link to="/about"><i class="fa fa-users"></i><span>Students</span></router-link></li>
                             <li><a href="departments.html"><i class="fa fa-users"></i><span>Departments</span></a></li>
-                            <li><a href="courses.html"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>
+                            <li><router-link to="/courses"><i class="fa fa-graduation-cap"></i><span>Courses</span></router-link></li>
                             <li><a href="library.html"><i class="fa fa-book"></i><span>Library</span></a></li>
                             <li><a href="holiday.html"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                             <li class="g_heading">Extra</li>
