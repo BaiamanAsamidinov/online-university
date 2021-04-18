@@ -18,6 +18,7 @@ export default {
         .post("/attendance-management/api/auth/login/", data)
         .then((result) => {
           console.log(`token`, result.data.access);
+          console.log(`authorities`, result.data.authenticatedUser.role);
           const bearerToken = result.data.access;
           if (bearerToken) {
             const jwt = bearerToken;
@@ -28,7 +29,12 @@ export default {
             }
           }
           this.authenticationError = false;
-          store.commit("setUser", { username: this.username });
+          store.commit("setUser", {
+            username: this.username,
+            authorities: result.data.authenticatedUser.role,
+          });
+          console.log(`store.userStore.state.user`, store.state);
+          store.commit("setAuthenticated", true);
           this.$router.push(this.$route.query.redirectFrom || { name: "Home" });
         })
         .catch(() => {

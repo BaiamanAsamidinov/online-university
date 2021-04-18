@@ -56,7 +56,7 @@
           <a href="javascript:void(0)" class="nav-link icon right_tab"
             ><i class="fe fe-align-right"></i
           ></a>
-          <router-link to='/login' class="nav-link icon settingbar"
+          <router-link to="/login" class="nav-link icon settingbar"
             ><i class="fe fe-power"></i
           ></router-link>
         </div>
@@ -389,7 +389,7 @@
       </div>
     </div>
     <!-- Start Quick menu with more functio -->
-    <!--        <div class="user_div">-->
+    <!-- <div class="user_div">-->
     <!--            <ul class="nav nav-tabs">-->
     <!--                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#righttab-statistics">Statistics</a></li>-->
     <!--                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#righttab-Result">Result</a></li>-->
@@ -902,7 +902,7 @@
     <!--                    </ul>-->
     <!--                </div>-->
     <!--            </div>-->
-    <!--        </div>-->
+    <!--        </div> -->
     <!--        &lt;!&ndash; Start Main leftbar navigation &ndash;&gt;-->
     <div id="left-sidebar" class="sidebar">
       <h5 class="brand-name">
@@ -938,7 +938,7 @@
                 >
               </li>
               <li>
-                <router-link to="/professors"
+                <router-link to="/professors" v-if="authenticated"
                   ><i class="fa fa-black-tie"></i
                   ><span>Professors</span></router-link
                 >
@@ -949,18 +949,18 @@
                 >
               </li>
               <li>
-                <router-link to="/students"
+                <router-link to="/students" v-if="authenticated"
                   ><i class="fa fa-users"></i><span>Students</span></router-link
                 >
               </li>
               <li>
-                <router-link to="/departments"
+                <router-link to="/departments" v-if="authenticated"
                   ><i class="fa fa-users"></i
                   ><span>Departments</span></router-link
                 >
               </li>
               <li>
-                <router-link to="/courses"
+                <router-link to="/courses" v-if="authenticated"
                   ><i class="fa fa-graduation-cap"></i
                   ><span>Courses</span></router-link
                 >
@@ -1063,6 +1063,13 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    ...mapGetters(["user"]),
+    ...mapGetters(["authenticated"]),
+  },
+};
 </script>
 
 <style scoped>

@@ -1,3 +1,5 @@
+
+
 <template>
   <div class="home">
     <Bashky />
@@ -1189,6 +1191,7 @@
 import Bashky from "@/components/BashkyBet.vue";
 import Footer from "@/components/Footer.vue";
 import Header from "@/components/Header.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Home",
@@ -1196,6 +1199,9 @@ export default {
     Bashky,
     Footer,
     Header,
+  },
+  computed: {
+    ...mapGetters(["user"]),
   },
 };
 </script>
