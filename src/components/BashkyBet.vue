@@ -929,7 +929,7 @@
       </ul>
       <div class="tab-content mt-3">
         <div class="tab-pane fade show active" id="menu-uni" role="tabpanel">
-          <nav class="sidebar-nav">
+          <nav class="sidebar-nav align-left">
             <ul class="metismenu">
               <li class="active">
                 <router-link to="/"
@@ -1009,7 +1009,7 @@
             </ul>
           </nav>
         </div>
-        <div class="tab-pane fade" id="menu-admin" role="tabpanel">
+        <div class="tab-pane fade align-left" id="menu-admin" role="tabpanel">
           <nav class="sidebar-nav">
             <ul class="metismenu">
               <li>

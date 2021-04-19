@@ -322,8 +322,14 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
+  data: function(){
+    return {
+      showMenu: true,
+      number:0,
+    }
+    },
   computed: {
     ...mapGetters(["user"]),
-  },
+  }
 };
 </script>
