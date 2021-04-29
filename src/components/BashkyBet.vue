@@ -949,12 +949,12 @@
                 >
               </li>
               <li>
-                <router-link to="/students" v-if="authenticated"
+                <router-link to="/students"
                   ><i class="fa fa-users"></i><span>Students</span></router-link
                 >
               </li>
               <li>
-                <router-link to="/departments" v-if="authenticated"
+                <router-link to="/departments"
                   ><i class="fa fa-users"></i
                   ><span>Departments</span></router-link
                 >
@@ -1038,9 +1038,9 @@
                 >
               </li>
               <li>
-                <a href="attendance.html"
-                  ><i class="fa fa-calendar-check-o"></i
-                  ><span>Attendance</span></a
+                <router-link to="/attendance"
+                ><i class="fa fa-calendar-check-o"></i
+                ><span>Attendance</span></router-link
                 >
               </li>
               <li>

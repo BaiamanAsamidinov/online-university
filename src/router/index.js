@@ -30,6 +30,15 @@ const routes = [
     },
   },
   {
+    path: "/attendance",
+    name: "Attendance",
+    component: () => import("../views/attendance/Attendance.vue"),
+    meta: {
+      // authorities: ["Admin", "Teacher", "Student"],
+      // requiresAuth: true,
+    },
+  },
+  {
     path: "/courses",
     name: "Courses",
     component: () => import("../views/courses/Courses.vue"),
