@@ -522,16 +522,9 @@
                 >
               </li>
               <li>
-<<<<<<< HEAD
                 <router-link to="/attendance"
                 ><i class="fa fa-calendar-check-o"></i
-                ><span>Attendance</span></router-link
-=======
-                <a href="attejndance.html"
-                  ><i class="fa fa-calendar-check-o"></i
-                  ><span>Attendance</span></a
->>>>>>> 8e75d7598fb3d78bb34a317e4c74e3a92f27424a
-                >
+                ><span>Attendance</span></router-link>
               </li>
               <li>
                 <a href="leave.html"
