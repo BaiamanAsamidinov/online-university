@@ -1,0 +1,43 @@
+LEARN VUE:
+    vuex, router, etc
+add django back and setup the project(done)
+add structure to project(done):
+    structured to header footer and added scripts(done) 
+    added .service files to fetching api
+    added .component files to logic
+login logic add(done)
+add authorization JWT:
+    student, teacher, superviser, admin (done)
+    to ralative links (process)
+    add middleware to check the permissions(process)
+add authentication: 
+    add to cookie (done)
+    add to localStorage (done)
+    login page(process)
+add necessary pages and structure to it (done)
+add fetching from api:
+    for professors get(done), post, put, delete(process)
+    for students get(done), post, put, delete(process)
+    for teachers get(done), post, put, delete(process)
+    for courses get(done), post, put, delete(process)
+some permissions for user groups(done)
+but we have more job
+    
+add attendens function(process Bayaman)
+user Profile
+view edit delete buttons for entities
+add form for entities
+deteil pages for entities
+remove all unnecessary links and pages
+remove all unnecessary buttons forms searchs etc
+add authorization for links
+add avatar photos to entities all what needed
+add 404 505 error pages where necessary
+add sign up another user only for admin
+fill interactive dashboard with necessary staff
+add dynamik(by authorization) link:
+    make only for student site
+    only for teacher site
+    only for admin site
+    only for superviser site
+Example: if its student he can see only his courses, if its teacher same, if its admin all courses etc(to all pages)
