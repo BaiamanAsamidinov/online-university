@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import { setupAxiosInterceptors } from './shared/axios-interceptor.js';
+import vuetify from './plugins/vuetify'
 // import VueRouter from "vue-router";
 // import VueSidebarMenu from "vue-sidebar-menu";
 // import "vue-sidebar-menu/dist/vue-sidebar-menu.css";
@@ -39,6 +40,6 @@ setupAxiosInterceptors(() => console.log('Unauthorized!'));
 new Vue({
   router,
   store,
-  
+  vuetify,
   render: h => h(App)
 }).$mount('#app')

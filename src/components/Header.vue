@@ -8,6 +8,7 @@
             <input
               type="text"
               class="form-control"
+              v-model="search"
               placeholder="What you want to find"
             />
             <div class="input-group-append">
@@ -18,91 +19,51 @@
           </div>
         </div>
         <div class="right">
-          <ul class="nav nav-pills">
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                data-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Pages</a
-              >
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="page-empty.html">Empty page</a>
-                <a class="dropdown-item" href="page-profile.html">Profile</a>
-                <a class="dropdown-item" href="page-search.html"
-                  >Search Results</a
-                >
-                <a class="dropdown-item" href="page-timeline.html">Timeline</a>
-                <a class="dropdown-item" href="page-invoices.html">Invoices</a>
-                <a class="dropdown-item" href="page-pricing.html">Pricing</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                data-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Auth</a
-              >
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="login.html">Login</a>
-                <a class="dropdown-item" href="register.html">Register</a>
-                <a class="dropdown-item" href="forgot-password.html"
-                  >Forgot password</a
-                >
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="404.html">404 error</a>
-                <a class="dropdown-item" href="500.html">500 error</a>
-              </div>
-            </li>
-          </ul>
+<!--          <ul class="nav nav-pills">-->
+<!--            <li class="nav-item dropdown">-->
+<!--              <a-->
+<!--                class="nav-link dropdown-toggle"-->
+<!--                data-toggle="dropdown"-->
+<!--                href="#"-->
+<!--                role="button"-->
+<!--                aria-haspopup="true"-->
+<!--                aria-expanded="false"-->
+<!--                >Pages</a-->
+<!--              >-->
+<!--              <div class="dropdown-menu">-->
+<!--                <a class="dropdown-item" href="page-empty.html">Empty page</a>-->
+<!--                <a class="dropdown-item" href="page-profile.html">Profile</a>-->
+<!--                <a class="dropdown-item" href="page-search.html"-->
+<!--                  >Search Results</a-->
+<!--                >-->
+<!--                <a class="dropdown-item" href="page-timeline.html">Timeline</a>-->
+<!--                <a class="dropdown-item" href="page-invoices.html">Invoices</a>-->
+<!--                <a class="dropdown-item" href="page-pricing.html">Pricing</a>-->
+<!--              </div>-->
+<!--            </li>-->
+<!--            <li class="nav-item dropdown">-->
+<!--              <a-->
+<!--                class="nav-link dropdown-toggle"-->
+<!--                data-toggle="dropdown"-->
+<!--                href="#"-->
+<!--                role="button"-->
+<!--                aria-haspopup="true"-->
+<!--                aria-expanded="false"-->
+<!--                >Auth</a-->
+<!--              >-->
+<!--              <div class="dropdown-menu">-->
+<!--                <a class="dropdown-item" href="login.html">Login</a>-->
+<!--                <a class="dropdown-item" href="register.html">Register</a>-->
+<!--                <a class="dropdown-item" href="forgot-password.html"-->
+<!--                  >Forgot password</a-->
+<!--                >-->
+<!--                <div class="dropdown-divider"></div>-->
+<!--                <a class="dropdown-item" href="404.html">404 error</a>-->
+<!--                <a class="dropdown-item" href="500.html">500 error</a>-->
+<!--              </div>-->
+<!--            </li>-->
+<!--          </ul>-->
           <div class="notification d-flex">
-            <div class="dropdown d-flex">
-              <a
-                class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1"
-                data-toggle="dropdown"
-                ><i class="fa fa-language"></i
-              ></a>
-              <div
-                class="dropdown-menu dropdown-menu-right dropdown-menu-arrow"
-              >
-                <a class="dropdown-item" href="#"
-                  ><img
-                    class="w20 mr-2"
-                    src="@/assets/images/flags/us.svg"
-                    alt=""
-                  />English</a
-                >
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"
-                  ><img
-                    class="w20 mr-2"
-                    src="@/assets/images/flags/es.svg"
-                    alt=""
-                  />Spanish</a
-                >
-                <a class="dropdown-item" href="#"
-                  ><img
-                    class="w20 mr-2"
-                    src="@/assets/images/flags/jp.svg"
-                    alt=""
-                  />japanese</a
-                >
-                <a class="dropdown-item" href="#"
-                  ><img
-                    class="w20 mr-2"
-                    src="@/assets/images/flags/bl.svg"
-                    alt=""
-                  />France</a
-                >
-              </div>
-            </div>
             <div class="dropdown d-flex">
               <a
                 class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1"
