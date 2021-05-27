@@ -1,17 +1,17 @@
-import axios from 'axios';
-import store from '../../store'
+import axios from "axios";
+import store from "../../store";
 
-const baseApiUrl = '/attendance-management/api/university/faculties';
+const baseApiUrl = "/attendance-management/api/faculties";
 
 export default class DepartmentsService {
   find(id) {
     return new Promise((resolve, reject) => {
       axios
         .get(`${baseApiUrl}/${id}`)
-        .then(res => {
+        .then((res) => {
           resolve(res.data);
         })
-        .catch(err => {
+        .catch((err) => {
           reject(err);
         });
     });
@@ -22,12 +22,12 @@ export default class DepartmentsService {
       axios
         .get(baseApiUrl)
         // .get(baseApiUrl + `?${buildPaginationQueryOpts(paginationQuery)}`)
-        .then(res => {
-          store.commit('setAllDepartments', res.data)
-          console.log(`departments`, res.data)
+        .then((res) => {
+          store.commit("setAllDepartments", res.data);
+          console.log(`departments`, res.data);
           resolve(res);
         })
-        .catch(err => {
+        .catch((err) => {
           reject(err);
         });
     });
@@ -37,10 +37,10 @@ export default class DepartmentsService {
     return new Promise((resolve, reject) => {
       axios
         .delete(`${baseApiUrl}/${id}`)
-        .then(res => {
+        .then((res) => {
           resolve(res);
         })
-        .catch(err => {
+        .catch((err) => {
           reject(err);
         });
     });
@@ -50,10 +50,10 @@ export default class DepartmentsService {
     return new Promise((resolve, reject) => {
       axios
         .post(`${baseApiUrl}`, entity)
-        .then(res => {
+        .then((res) => {
           resolve(res.data);
         })
-        .catch(err => {
+        .catch((err) => {
           reject(err);
         });
     });
@@ -63,10 +63,10 @@ export default class DepartmentsService {
     return new Promise((resolve, reject) => {
       axios
         .put(`${baseApiUrl}`, entity)
-        .then(res => {
+        .then((res) => {
           resolve(res.data);
         })
-        .catch(err => {
+        .catch((err) => {
           reject(err);
         });
     });

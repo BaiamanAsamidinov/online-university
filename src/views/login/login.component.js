@@ -17,22 +17,22 @@ export default {
       axios
         .post("/attendance-management/api/auth/login/", data)
         .then((result) => {
-          console.log(`token`, result.data.access);
-          console.log(`authorities`, result.data.authenticatedUser.role);
           const bearerToken = result.data.access;
+          const user = {
+            username: this.username,
+            authorities: result.data.authenticatedUser.role,
+          };
           if (bearerToken) {
             const jwt = bearerToken;
             if (this.rememberMe) {
               localStorage.setItem("authenticationToken", jwt);
+              localStorage.setItem("user1", JSON.stringify(user));
             } else {
               sessionStorage.setItem("authenticationToken", jwt);
             }
           }
           this.authenticationError = false;
-          store.commit("setUser", {
-            username: this.username,
-            authorities: result.data.authenticatedUser.role,
-          });
+          store.commit("setUser", user);
           console.log(`store.userStore.state.user`, store.state);
           store.commit("setAuthenticated", true);
           this.$router.push(this.$route.query.redirectFrom || { name: "Home" });

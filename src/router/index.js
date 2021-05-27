@@ -1,8 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import { mapGetters } from "vuex";
+// import { mapGetters } from "vuex";
 import { userStore } from "../store/moduls";
+import store from "../store";
 Vue.use(VueRouter);
 
 const routes = [
@@ -10,15 +11,18 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/students",
     name: "Students",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/students/Students.vue"),
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/professors",
@@ -35,7 +39,7 @@ const routes = [
     component: () => import("../views/attendance/Attendance.vue"),
     meta: {
       // authorities: ["Admin", "Teacher", "Student"],
-      // requiresAuth: true,
+      requiresAuth: true,
     },
   },
   {
@@ -67,16 +71,28 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   let authorities = userStore.state.user.authorities;
+  let authenticated = userStore.state.authenticated;
   if (to.matched.some((record) => record.meta.requiresAuth)) {
-    let authenticated = mapGetters(["authenticated"]);
     if (!authenticated) {
-      next({
-        path: "/login",
-        query: { redirect: to.fullPath },
-      });
+      const token =
+        localStorage.getItem("authenticationToken") ||
+        sessionStorage.getItem("authenticationToken");
+      const user = JSON.parse(localStorage.getItem("user1"));
+      console.log(`user`, localStorage.getItem("user1"));
+      if (token && user) {
+        store.commit("setUser", {
+          username: user.username,
+          authorities: user.authorities,
+        });
+        store.commit("setAuthenticated", true);
+        next();
+      } else {
+        next({
+          path: "/login",
+          query: { redirect: to.fullPath },
+        });
+      }
     } else {
-      console.log(`to.meta.authorities`, to.meta.authorities);
-      console.log(`authorities`, authorities);
       if (to.matched.some((record) => record.meta.authorities)) {
         let authoritiesFromRout = to.meta.authorities;
         if (!authoritiesFromRout.includes(authorities)) {

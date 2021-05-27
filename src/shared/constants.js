@@ -1,1 +1,3 @@
-export const SERVER_API_URL = 'http://127.0.0.1:8000';
+export const SERVER_API_URL =
+  "https://student-attendance-menegement.herokuapp.com";
+export const BASE_FRONT_URL = "http://localhost:8080";

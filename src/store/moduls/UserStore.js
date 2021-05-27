@@ -14,5 +14,9 @@ export const userStore = {
     setAuthenticated(state, authenticated) {
       state.authenticated = authenticated;
     },
+    logout(state) {
+      state.user = null;
+      state.authenticated = false;
+    },
   },
 };

@@ -9,13 +9,6 @@
                 ><i class="fa fa-graduation-cap brand-logo"></i
               ></a>
               <div class="card-title mt-3">Login to your account</div>
-              <button type="button" class="btn btn-facebook">
-                <i class="fa fa-facebook mr-2"></i>Facebook
-              </button>
-              <button type="button" class="btn btn-google">
-                <i class="fa fa-google mr-2"></i>Google
-              </button>
-              <h6 class="mt-3 mb-3">Or</h6>
             </div>
             <div class="form-group">
               <input
@@ -28,11 +21,6 @@
               />
             </div>
             <div class="form-group">
-              <label class="form-label"
-                ><a href="forgot-password.html" class="float-right small"
-                  >I forgot password</a
-                ></label
-              >
               <input
                 type="password"
                 class="form-control"

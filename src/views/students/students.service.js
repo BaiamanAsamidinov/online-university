@@ -21,7 +21,6 @@ export default class StudentsService {
     return new Promise((resolve, reject) => {
       axios
         .get(baseApiUrl)
-        // .get(baseApiUrl + `?${buildPaginationQueryOpts(paginationQuery)}`)
         .then(res => {
           store.commit('setAllStudents', res.data)
           console.log(`students`, res.data)

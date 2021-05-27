@@ -3,7 +3,7 @@ import store from '../../store'
 
 const baseApiUrl = '/attendance-management/api/courses';
 
-export default class CoursesService {
+export default class CoursesService {k
     find(id) {
         return new Promise((resolve, reject) => {
             axios

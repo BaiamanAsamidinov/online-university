@@ -303,7 +303,7 @@
                 <a class="dropdown-item" href="javascript:void(0)"
                   ><i class="dropdown-icon fe fe-help-circle"></i> Need help?</a
                 >
-                <a class="dropdown-item" href="login.html"
+                <a class="dropdown-item" v-on:click.prevent="logout()"
                   ><i class="dropdown-icon fe fe-log-out"></i> Sign out</a
                 >
               </div>
@@ -321,15 +321,27 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
+import { BASE_FRONT_URL } from "../shared/constants";
+
 export default {
-  data: function(){
+  methods: {
+    logout() {
+      localStorage.removeItem("authenticationToken");
+      localStorage.removeItem("user1");
+      sessionStorage.removeItem("authenticationToken");
+      this.$store.commit("logout");
+      window.location.href = `${BASE_FRONT_URL}/login`;
+    },
+  },
+
+  data: function () {
     return {
       showMenu: true,
-      number:0,
-    }
-    },
+      number: 0,
+    };
+  },
   computed: {
     ...mapGetters(["user"]),
-  }
+  },
 };
 </script>
