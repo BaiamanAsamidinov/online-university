@@ -1,5 +1,5 @@
 import axios from "axios";
-import store from "../../store";
+import store from "../../../store";
 
 export default {
   components: {},
@@ -12,7 +12,7 @@ export default {
     };
   },
   methods: {
-    doLogin() {
+    registerUser() {
       const data = { email: this.username, password: this.password };
       axios
         .post("/attendance-management/api/auth/login/", data)
